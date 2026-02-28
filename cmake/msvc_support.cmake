@@ -1,6 +1,6 @@
 
 function(rpclib_msvc_support)
-  if(MSVC)
+  if(MSVC OR CMAKE_C_SIMULATE_ID STREQUAL "MSVC")
     # When building via conan, respect the compilation settings.
     if ("${CONAN_LINK_RUNTIME}" STREQUAL "/MT")
       set(RPCLIB_MSVC_STATIC_RUNTIME ON)
